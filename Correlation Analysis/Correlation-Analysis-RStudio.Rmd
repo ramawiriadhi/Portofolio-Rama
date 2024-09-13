@@ -1,0 +1,123 @@
+---
+title: "Correlation Analysis"
+output: github_document
+---
+
+## Mengaktifkan beberapa Package yang akan digunakan ##
+```{r}
+library(readxl)   #Package yang berguna untuk membaca file dalam format excel
+library(ggplot2)  #Package yang berguna untuk membuat tabel
+library(ggpubr)
+library(plotly)
+library(knitr)    
+library(rmarkdown)
+```
+
+## Membaca data yang sudah disimpan dalam format Excel (.xls atau .xlsx) ##
+```{r}
+data_inc_hap <- read_excel("Data - Income and Happiness Correlation.xlsx") #Data tentang GDP dan Tingkat Kebahagiaan pada 111 negara di dunia
+
+data_screentime <- read_excel("Screentime - App.xlsx") #Data tentang jumlah notifikasi yang diterima dan jumlah membuka hp dalam suatu waktu
+
+data_ice_temp <- read_excel("Ice Cream Sales - Temperatures.xlsx") # Data tentang suhu udara di suatu tempat dan keuntungan penjualan es krim
+```
+Syntax `read_excel` mengasumsikan bahwa file excel yang akan dibaca berada pada **Working Directory RStudio**, dimana dalam kasus ini Working Directory saya berada pada path "C:/Users/Rama/Documents"
+
+Jika ingin mengetahui letak Working Directory bisa menggunakan syntax **"getwd()"**
+<br><br>
+
+## Melihat data yang sudah diaktifkan ##
+Menampilkan 10 data pertama pada data GDP dan Tingkat Kebahagiaan dalam bentuk tabel
+```{r}
+kable(head(data_inc_hap,10))
+```
+<br>
+Menampilkan 5 data pertama pada data jumlah notifikasi dan jumlah menggunakan hp dalam bentuk tabel
+```{r}
+kable(head(data_screentime,5), col.names = list("Tanggal", "Lama Penggunaan HP (jam)", "Jumlah Notifikasi Diterima", "Jumlah Sebuah Aplikasi Dibuka", "Nama Aplikasi"))
+```
+<br>
+Menampilkan 5 data pertama pada data suhu udara dan keutungan penjualan es krim dalam bentuk tabel
+```{r}
+kable(head(data_ice_temp,5), col.names = list("Suhu Udara (dalam Fahrenheit)","Keuntungan Penjualan (dalam USD$)"))
+```
+<br><br>
+
+## Analisis Korelasi Antara GDP dan Tingkat Kebahagiaan ##
+**VISUALISASI DENGAN SCATTERPLOT**
+```{r}
+ggscatter(data_inc_hap, x = "happyScore", y="GDP", add = "reg.line", cor.method = "pearson", conf.int = TRUE, xlab = "Tingkat Kebahagiaan", ylab = "GDP")
+```
+
+**PENJELASAN PLOT**
+Berdasarkan plot diatas, korelasi antara GDP dan Tingkat Kebahagiaan cenderung mengarah ke kanan atas. Hasil tersebut memberikan arti bahwa **GDP dan Tingkat Kebahagiaan memiliki korelasi positif**, artinya apabila GDP meingkat, maka Tingkat Kebahagiaan akan meningkat pula. Begitu pula sebaliknya, apabila GDP menurun, maka Tingkat Kebahagiaan akan menurun pula.
+<br>
+
+**ANALISIS KORELASI DENGAN METODE KORELASI PEARSON**
+```{r}
+test_inc_hap <- cor.test(data_inc_hap$happyScore, data_inc_hap$GDP, method = "pearson")
+test_inc_hap
+```
+
+**KEPUTUSAN DAN KESIMPULAN**<br>
+Berdasarkan **hasil** diatas, diperoleh koefisien korelasi pearson sebesar **0.7079171** dan *p-value* sebesar **2.2e-16** sehingga kesimpulannya adalah **GDP dan Tingkat Kebahagiaan berkorelasi secara positif dan signifikan**.
+<br><br>
+
+## Analisis Korelasi Antara Lama Penggunaan HP, Jumlah Notifikasi Diterima, dan Jumlah Sebuah Aplikasi Dibuka ##
+**VISUALISASI DENGAN SCATTERPLOT ANTARA JUMLAH SEBUAH APLIKASI DIBUKA DAN LAMA PENGGUNAAN HP**
+```{r}
+ggscatter(data_screentime, x = "Times opened", y = "Usage", add = "reg.line", cor.method = "pearson", conf.int = TRUE, xlab = "Jumlah Sebuah Aplikasi Dibuka", ylab = "Lama Penggunaan HP (jam)")
+```
+
+**PENJELASAN PLOT**
+Berdasarkan plot diatas, korelasi antara Jumlah Sebuah Aplikasi Dibuka dan Lama Penggunaan HP cenderung mengarah ke kanan atas. Hasil tersebut memberikan arti bahwa **Jumlah Sebuah Aplikasi Dibuka dan Lama Penggunaan HP memiliki korelasi positif**, artinya apabila Jumlah Sebuah Aplikasi Dibuka meingkat, maka Lama Penggunaan HP akan meningkat pula, begitu pula sebaliknya.
+<br><br>
+
+**ANALISIS KORELASI ANTARA JUMLAH SEBUAH APLIKASI DIBUKA DAN LAMA PENGGUNAAN HP DENGAN METODE KORELASI PEARSON**
+```{r}
+test_screentime_1 <- cor.test(data_screentime$`Times opened`, data_screentime$Usage, method = "pearson")
+test_screentime_1
+```
+
+**KEPUTUSAN DAN KESIMPULAN**<br>
+Berdasarkan **hasil** diatas, diperoleh koefisien korelasi pearson sebesar **0.816409** dan *p-value* sebesar **5.317e-14** sehingga kesimpulannya adalah **GDP dan Tingkat Kebahagiaan berkorelasi secara positif dan signifikan**.
+<br><br>
+
+**VISUALISASI DENGAN SCATTERPLOT ANTARA JUMLAH NOTIFIKASI DITERIMA DAN JUMLAH SEBUAH APLIKASI DIBUKA**
+```{r}
+ggscatter(data_screentime, x = "Notifications", y = "Times opened", add = "reg.line", cor.method = "spearman", conf.int = TRUE, xlab = "Jumlah Notifikasi Diterima", ylab = "Jumlah Sebuah Aplikasi Dibuka")
+```
+
+**PENJELASAN PLOT**
+Berdasarkan plot diatas, korelasi antara Jumlah Notifikasi Diterima dan Jumlah Sebuah Aplikasi Dibuka cenderung mengarah ke kanan atas. Hasil tersebut memberikan arti bahwa **Jumlah Notifikasi Diterima dan Jumlah Sebuah Aplikasi Dibuka memiliki korelasi positif**, artinya apabila Jumlah Notifikasi Diterima meingkat, maka Jumlah Sebuah Aplikasi Dibuka akan meningkat pula, begitu pula sebaliknya.
+<br><br>
+
+**ANALISIS KORELASI ANTARA JUMLAH NOTIFIKASI DITERIMA DAN JUMLAH SEBUAH APLIKASI DIBUKA DENGAN METODE KORELASI SPEARMAN**
+```{r}
+test_screentime_2 <- cor.test(data_screentime$Notifications, data_screentime$`Times opened`, method = "spearman")
+test_screentime_2
+```
+
+**KEPUTUSAN DAN KESIMPULAN**<br>
+Berdasarkan **hasil** diatas, diperoleh koefisien korelasi spearman sebesar **0.8618823** dan *p-value* sebesar **2.2e-16** sehingga kesimpulannya adalah **Jumlah Notifikasi Diterima dan Jumlah Sebuah Aplikasi Dibuka berkorelasi secara positif dan signifikan**.
+<br><br>
+
+## Analisis Korelasi Antara Suhu Udara dan Keuntungan Penjualan Es Krim ##
+**VISUALISASI DENGAN SCATTERPLOT**
+```{r}
+ggscatter(data_ice_temp, x = "Temperature", y = "Ice Cream Profits", add = "reg.line", cor.method = "kendall", conf.int = TRUE, xlab = "Suhu Udara (Fahrenheit)", ylab = "Keuntungan Penjualan Es Krim (USD)")
+```
+
+**PENJELASAN PLOT**
+Berdasarkan plot diatas, korelasi antara Suhu Udara dan Keuntungan Penjualan Es Krim cenderung mengarah ke kanan atas. Hasil tersebut memberikan arti bahwa **Suhu Udara dan Keuntungan Penjualan Es Krim memiliki korelasi positif**, artinya apabila Suhu Udara meingkat, maka Keuntungan Penjualan Es Krim akan meningkat pula, begitu pula sebaliknya.
+<br><br>
+
+**ANALISIS KORELASI ANTARA SUHU UDARA DAN KEUNTUNGAN PENJUALAN ES KRIM DENGAN METODE KORELASI KENDALL**
+```{r}
+test_screentime_3 <- cor.test(data_ice_temp$Temperature, data_ice_temp$`Ice Cream Profits`, method = "kendall")
+test_screentime_3
+```
+
+**KEPUTUSAN DAN KESIMPULAN**<br>
+Berdasarkan **hasil** diatas, diperoleh koefisien korelasi kendall sebesar **0.9133351** dan *p-value* sebesar **2.2e-16** sehingga kesimpulannya adalah **Suhu Udara dan Keuntungan Penjualan Es Krim berkorelasi secara positif dan signifikan**.
+<br><br>
