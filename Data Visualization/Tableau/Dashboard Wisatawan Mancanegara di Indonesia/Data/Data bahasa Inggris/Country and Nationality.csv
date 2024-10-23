@@ -1,0 +1,234 @@
+Continent;Nationality;Country
+Asia;Malaysian;Malaysia
+Asia;Filipino;Philippines
+Asia;Singaporean;Singapore
+Asia;Thai;Thailand
+Asia;Vietnamese;Vietnam
+Asia;Hong Konger;Hong Kong
+Asia;Indian;India
+Asia;Japanese;Japan
+Asia;South Korean;South Korea
+Asia;Taiwanese;Taiwan
+Asia;Chinese;China
+Asia;Timorese;Timor-Leste
+Asia;Saudi Arabian;Saudi Arabia
+Asia;Kuwaiti;Kuwait
+Asia;Egyptian;Egypt
+Asia;Emirati;United Arab Emirates
+Asia;Yemeni;Yemen
+Asia;Other Asian;Afghanistan
+Asia;Other Asian;Armenia
+Asia;Other Asian;Azerbaijan
+Asia;Other Asian;Bahrain
+Asia;Other Asian;Bangladesh
+Asia;Other Asian;Bhutan
+Asia;Other Asian;Brunei
+Asia;Other Asian;Cambodia
+Asia;Other Asian;Georgia
+Asia;Other Asian;Iran
+Asia;Other Asian;Iraq
+Asia;Other Asian;Israel
+Asia;Other Asian;Jordan
+Asia;Other Asian;Kazakhstan
+Asia;Other Asian;Kyrgyzstan
+Asia;Other Asian;Laos
+Asia;Other Asian;Lebanon
+Asia;Other Asian;Macau
+Asia;Other Asian;Maldives
+Asia;Other Asian;Mongolia
+Asia;Other Asian;Myanmar
+Asia;Other Asian;Nepal
+Asia;Other Asian;North Korea
+Asia;Other Asian;Oman
+Asia;Other Asian;Pakistan
+Asia;Other Asian;Palestine
+Asia;Other Asian;Qatar
+Asia;Other Asian;Sri Lanka
+Asia;Other Asian;Syria
+Asia;Other Asian;Tajikistan
+Asia;Other Asian;Turkey
+Asia;Other Asian;Turkmenistan
+Asia;Other Asian;Uzbekistan
+Europe;French;France
+Europe;German;Germany
+Europe;Dutch;Netherlands
+Europe;British;United Kingdom
+Europe;Russian;Russia
+Europe;Other European;Albania
+Europe;Other European;Andorra
+Europe;Other European;Austria
+Europe;Other European;Belarus
+Europe;Other European;Belgium
+Europe;Other European;Bosnia and Herzegovina
+Europe;Other European;Bulgaria
+Europe;Other European;Croatia
+Europe;Other European;Cyprus
+Europe;Other European;Czech Republic
+Europe;Other European;Denmark
+Europe;Other European;Estonia
+Europe;Other European;Faroe Islands
+Europe;Other European;Finland
+Europe;Other European;Gibraltar
+Europe;Other European;Greece
+Europe;Other European;Guernsey
+Europe;Other European;Hungary
+Europe;Other European;Iceland
+Europe;Other European;Ireland
+Europe;Other European;Isle of Man
+Europe;Other European;Italy
+Europe;Other European;Jersey
+Europe;Other European;Latvia
+Europe;Other European;Liechtenstein
+Europe;Other European;Lithuania
+Europe;Other European;Luxembourg
+Europe;Other European;Malta
+Europe;Other European;Moldova
+Europe;Other European;Monaco
+Europe;Other European;Montenegro
+Europe;Other European;North Macedonia
+Europe;Other European;Norway
+Europe;Other European;Poland
+Europe;Other European;Portugal
+Europe;Other European;Romania
+Europe;Other European;San Marino
+Europe;Other European;Serbia
+Europe;Other European;Slovakia
+Europe;Other European;Slovenia
+Europe;Other European;Spain
+Europe;Other European;Sweden
+Europe;Other European;Switzerland
+Europe;Other European;Ukraine
+Europe;Other European;Vatican City
+America;American;United States
+America;Canadian;Canada
+America;Brazilian;Brazil
+America;Mexican;Mexico
+America;Other American;Anguilla
+America;Other American;Antigua and Barbuda
+America;Other American;Aruba
+America;Other American;Bahamas
+America;Other American;Barbados
+America;Other American;Belize
+America;Other American;Bermuda
+America;Other American;British Virgin Islands
+America;Other American;Cayman Islands
+America;Other American;Costa Rica
+America;Other American;Cuba
+America;Other American;Curacao
+America;Other American;Dominica
+America;Other American;Dominican Republic
+America;Other American;El Salvador
+America;Other American;Greenland
+America;Other American;Grenada
+America;Other American;Guadeloupe
+America;Other American;Guatemala
+America;Other American;Haiti
+America;Other American;Honduras
+America;Other American;Jamaica
+America;Other American;Martinique
+America;Other American;Montserrat
+America;Other American;Nicaragua
+America;Other American;Panama
+America;Other American;Puerto Rico
+America;Other American;Saint Barthelemy
+America;Other American;Saint Kitts and Nevis
+America;Other American;Saint Lucia
+America;Other American;Saint Martin
+America;Other American;Saint Pierre and Miquelon
+America;Other American;Saint Vincent and the Grenadines
+America;Other American;Sint Maarten
+America;Other American;Trinidad and Tobago
+America;Other American;Turks and Caicos Islands
+America;Other American;United States Virgin Islands
+America;Other American;Argentina
+America;Other American;Bolivia
+America;Other American;Chile
+America;Other American;Colombia
+America;Other American;Ecuador
+America;Other American;Falkland Islands
+America;Other American;French Guiana
+America;Other American;Guyana
+America;Other American;Paraguay
+America;Other American;Peru
+America;Other American;Suriname
+America;Other American;Uruguay
+America;Other American;Venezuela
+Oceania;Australian; Australia
+Oceania;New Zealander;New Zealand
+Oceania;Papua New Guinean;Papua New Guinea
+Oceania;Other Oceanian;American Samoa
+Oceania;Other Oceanian;Cook Islands
+Oceania;Other Oceanian;Fiji
+Oceania;Other Oceanian;French Polynesia
+Oceania;Other Oceanian;Guam
+Oceania;Other Oceanian;Kiribati
+Oceania;Other Oceanian;Marshall Islands
+Oceania;Other Oceanian;Micronesia
+Oceania;Other Oceanian;Nauru
+Oceania;Other Oceanian;New Caledonia
+Oceania;Other Oceanian;Niue
+Oceania;Other Oceanian;Northern Mariana Islands
+Oceania;Other Oceanian;Palau
+Oceania;Other Oceanian;Samoa
+Oceania;Other Oceanian;Solomon Islands
+Oceania;Other Oceanian;Tokelau
+Oceania;Other Oceanian;Tonga
+Oceania;Other Oceanian;Tuvalu
+Oceania;Other Oceanian;Vanuatu
+Oceania;Other Oceanian;Wallis and Futuna
+Africa;South African;South Africa
+Africa;Other African;Algeria
+Africa;Other African;Angola
+Africa;Other African;Benin
+Africa;Other African;Botswana
+Africa;Other African;Burkina Faso
+Africa;Other African;Burundi
+Africa;Other African;Cameroon
+Africa;Other African;Cape Verde
+Africa;Other African;Central African Republic
+Africa;Other African;Chad
+Africa;Other African;Comoros
+Africa;Other African;Djibouti
+Africa;Other African;DR Congo
+Africa;Other African;Equatorial Guinea
+Africa;Other African;Eritrea
+Africa;Other African;Eswatini
+Africa;Other African;Ethiopia
+Africa;Other African;Gabon
+Africa;Other African;Gambia
+Africa;Other African;Ghana
+Africa;Other African;Guinea
+Africa;Other African;Guinea Bissau
+Africa;Other African;Ivory Coast
+Africa;Other African;Kenya
+Africa;Other African;Lesotho
+Africa;Other African;Liberia
+Africa;Other African;Libya
+Africa;Other African;Madagascar
+Africa;Other African;Malawi
+Africa;Other African;Mali
+Africa;Other African;Mauritania
+Africa;Other African;Mauritius
+Africa;Other African;Mayotte
+Africa;Other African;Morocco
+Africa;Other African;Mozambique
+Africa;Other African;Namibia
+Africa;Other African;Niger
+Africa;Other African;Nigeria
+Africa;Other African;Republic of the Congo
+Africa;Other African;Reunion
+Africa;Other African;Rwanda
+Africa;Other African;Sao Tome and Principe
+Africa;Other African;Senegal
+Africa;Other African;Seychelles
+Africa;Other African;Sierra Leone
+Africa;Other African;Somalia
+Africa;Other African;South Sudan
+Africa;Other African;Sudan
+Africa;Other African;Tanzania
+Africa;Other African;Togo
+Africa;Other African;Tunisia
+Africa;Other African;Uganda
+Africa;Other African;Western Sahara
+Africa;Other African;Zambia
+Africa;Other African;Zimbabwe
